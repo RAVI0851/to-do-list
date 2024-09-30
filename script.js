@@ -1,6 +1,7 @@
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const list = document.getElementById("todoList");
+const fi =[];
 
 submit.addEventListener("click",function(){
     const task = input.value;
