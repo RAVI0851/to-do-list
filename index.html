@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO-LIST</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
   <body>
-    <h1>TO DO LIST</h1>
-    <input type="text" placeholder="Start your list" id="input">
-    <button type="submit" target="_blank" id="submit">submit</button>
-    <ul id="todoList">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold text-center">TO DO LIST</h1>
+    <input type="text" placeholder="Start your list" id="input" class="border border-gray-300 p-2 rounded w-full mb-2">
+    <button type="submit" target="_blank" id="submit" class="bg-blue-500 text-white px-4 py-2 rounded w-full">submit</button>
+    <ul id="todoList" class="mt-4 space-y-2">
       
     </ul>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,7 +1,6 @@
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const list = document.getElementById("todoList");
-const fi =[];
 
 submit.addEventListener("click",function(){
     const task = input.value;
@@ -12,23 +11,30 @@ submit.addEventListener("click",function(){
     });
         function addTask(task){
             const li = document.createElement('li');
-            li.textContent = task;
-            list.appendChild(li);
-        input.value="";
+            li.className = 'flex items-center justify-evenly bg-gray-100 p-2 rounded shadow'
+            const taskText = document.createElement('span');
+        taskText.textContent = task;
+        taskText.className = 'bg-gray-100';
+        li.appendChild(taskText);
+        // input.value="";
         const complete = document.createElement('button');
-        complete.textContent = "  Complete";
+        complete.className = 'bg-green-500 text-white px-2 py-1 rounded mr-2 shadow'
+        complete.textContent = "Complete";
         li.appendChild(complete);
         complete.addEventListener('click',function(){
-            li.style.textDecoration = "line-through";
+            taskText.style.textDecoration = "line-through";
             savetasks();
         });
         const deletebtn = document.createElement('button');
-        deletebtn.textContent= "Delete";
+        deletebtn.textContent= "Delete  ";
+        deletebtn.className = 'flex items-center space-between bg-red-500 text-white px-2 py-1 rounded mr-2'
         li.append(deletebtn);
         deletebtn.addEventListener('click',function(){
             li.remove();
             savetasks();
         });
+        list.appendChild(li);
+        input.value ="";
     }
 function savetasks(){
     const tasks = [];
